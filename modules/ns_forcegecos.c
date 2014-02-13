@@ -32,13 +32,15 @@ static void hook_user_identify(user_t *u)
 	int ret;
 	metadata_t *md;
 	char *realname;
+	char buf[100];
 
 	md = metadata_find(u->myuser, "realname");
 
 	if (md != NULL) {
 		realname = md->value;
 	} else {
-		realname = "LOL I'm insecure";
+		snprintf(buf, 100, "%s (insecure)", u->gecos);
+		realname = buf;
 	}
 
 	ret = sts("CHGNAME %s :%s", u->uid, realname);
