@@ -8,7 +8,7 @@
 
 DECLARE_MODULE_V1
 (
-	"contrib/rs_forcegecos", false, _modinit, _moddeinit,
+	"totes/ns_forcegecos", false, _modinit, _moddeinit,
 	"$Revision: 1 $",
 	"Jason Kölker <jason@koelker.net>"
 );
