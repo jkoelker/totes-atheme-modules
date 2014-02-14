@@ -1,4 +1,4 @@
-SRCS = ns_forcegecos.c
+SRCS = ns_forcegecos.c ns_forceident.c
 
 # Additional extensions for building single-file modules.
 .SUFFIXES: $(PLUGIN_SUFFIX)
