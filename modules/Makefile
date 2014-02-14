@@ -1,4 +1,7 @@
-SRCS = ns_forcegecos.c ns_forceident.c
+SRCS = $(wildcard *.c)
+
+include ../extra.mk
+include ../buildsys.mk
 
 # Additional extensions for building single-file modules.
 .SUFFIXES: $(PLUGIN_SUFFIX)
@@ -16,6 +19,3 @@ quiet_cmd_cc_module = $@
 .c$(PLUGIN_SUFFIX):
 	$(call echo-cmd,cmd_cc_module)
 	$(cmd_cc_module)
-
-include ../extra.mk
-include ../buildsys.mk
