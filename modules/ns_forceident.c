@@ -33,7 +33,7 @@ static void hook_user_identify(user_t *u)
 	char *ident;
 	char buf[100];
 
-	myuser_t *mu = myuser_find_uid(u->uid);
+	myuser_t *mu = u->myuser;
 
 	if (mu == NULL) {
 		snprintf(buf, 100, "%s_insecure", entity(mu)->name);
