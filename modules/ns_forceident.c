@@ -30,17 +30,16 @@ void _moddeinit(module_unload_intent_t intent)
 static void hook_user_identify(user_t *u)
 {
 	int ret;
-	metadata_t *md;
 	char *ident;
 	char buf[100];
 
-	md = metadata_find(u->myuser, "name");
+	myuser_t *mu = myuser_find_uid(u->uid);
 
-	if (md != NULL) {
-		ident = md->value;
-	} else {
-		snprintf(buf, 100, "%s_insecure", u->user);
+	if (mu == NULL) {
+		snprintf(buf, 100, "%s_insecure", entity(mu)->name);
 		ident = buf;
+	} else {
+		ident = entity(mu)->name;
 	}
 
 	ret = sts("CHGIDENT %s %s", u->uid, ident);
