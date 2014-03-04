@@ -10,3 +10,6 @@ On user_identify hook, send CHGNAME for connecting users to what is set to that 
 
 #### ns_fpass.c
 Sets passwords for other users.
+
+#### ns_fproperty.c
+Set metadata properties for other users.
