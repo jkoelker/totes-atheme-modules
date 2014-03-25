@@ -43,7 +43,7 @@ static void hook_user_identify(user_t *u)
 		realname = buf;
 	}
 
-	ret = sts("CHGNAME %s :%s", u->uid, realname);
+	ret = sts("CHGNAMESILENT %s :%s", u->uid, realname);
 	if (ret == 1) {
 		slog(LG_INFO, "Could not set realname (%s) for user (%s): ret (%d)",
 		     realname, u->uid, ret);
